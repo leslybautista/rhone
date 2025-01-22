@@ -11119,14 +11119,14 @@ body {
 
 }
 .about-section p {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .projects-section {
   padding: 2rem 0;
 }
 .projects-section .featured-text {
-  padding: 1rem;
+  padding: 3rem;
 }
 @media (min-width: 992px) {
   .projects-section .featured-text {
