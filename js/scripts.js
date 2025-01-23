@@ -83,22 +83,7 @@ window.addEventListener('DOMContentLoaded', event => {
             event.preventDefault(); // Previene el comportamiento por defecto de redirigir
     
             const formData = new FormData(form);
-    
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    successMessage.classList.remove('d-none');
-                    form.reset(); // Limpia el formulario después de enviarlo
-                } else {
-                    throw new Error('Error en el envío');
-                }
-            })
-            .catch(error => {
-                errorMessage.classList.remove('d-none');
-            });
+           
         });
     });
     
