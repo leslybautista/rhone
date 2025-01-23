@@ -47,41 +47,44 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('contactForm');
-        const successMessage = document.getElementById('submitSuccessMessage');
-        const errorMessage = document.getElementById('submitErrorMessage');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
     
         form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Evitar la redirección
+            event.preventDefault(); // Bloquea el comportamiento predeterminado (redirección)
     
-            const formData = new FormData(form);
-            
-            // Enviar el formulario a Formspree usando Fetch
-            fetch(form.action, {
+            const formData = new FormData(form); // Captura los datos del formulario
+    
+            // Enviar los datos usando fetch
+            fetch('https://formspree.io/f/xzzdbvdl', {
                 method: 'POST',
-                body: formData
+                body: formData,
+                headers: {
+                    Accept: 'application/json',
+                },
             })
-            .then(response => {
-                if (response.ok) {
-                    // Mostrar el mensaje de éxito
-                    successMessage.style.display = 'block';
-                    form.reset();
+                .then((response) => {
+                    if (response.ok) {
+                        successMessage.style.display = 'block'; // Muestra mensaje de éxito
+                        form.reset(); // Limpia el formulario
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 5000); // Oculta el mensaje después de 5 segundos
+                    } else {
+                        throw new Error('Error al enviar el formulario');
+                    }
+                })
+                .catch((error) => {
+                    console.error(error);
+                    errorMessage.style.display = 'block'; // Muestra mensaje de error
                     setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000); // Ocultar el mensaje de éxito después de 5 segundos
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                // Mostrar el mensaje de error
-                errorMessage.style.display = 'block';
-                setTimeout(() => {
-                    errorMessage.style.display = 'none';
-                }, 5000); // Ocultar el mensaje de error después de 5 segundos
-            });
+                        errorMessage.style.display = 'none';
+                    }, 5000); // Oculta el mensaje después de 5 segundos
+                });
         });
     });
+    
     
 });

@@ -139,10 +139,10 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form class="form-signup" id="contactForm" action="https://formspree.io/f/xzzdbvdl" method="POST">
+                        <form id="contactForm">
                             <div class="row input-group-newsletter">
                                 <div class="col">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Write your message here..." rows="5" aria-label="Write your message here..." required></textarea>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
                                 </div>
                                 <div class="col-auto">
                                     <button class="btn btn-primary" type="submit">Send</button>
@@ -150,16 +150,10 @@
                             </div>
                         </form>
                         
-                        <!-- Success message -->
-                        <div id="submitSuccessMessage" style="display:none;" class="text-center text-white">
-                            <h5>Your message has been sent successfully!</h5>
-                        </div>
-                        
-                        <!-- Error message -->
-                        <div id="submitErrorMessage" style="display:none;" class="text-center text-danger">
-                            <h5>Oops, something went wrong. Please try again later.</h5>
-                        </div>
-                        
+                        <!-- Success and error messages -->
+                        <div id="successMessage" style="display:none; color: green;">Your message has been sent successfully!</div>
+                        <div id="errorMessage" style="display:none; color: red;">Oops! Something went wrong.</div>                      
+                       
                     </div>
                 </div>
             </div>
