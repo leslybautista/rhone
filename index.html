@@ -139,7 +139,7 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form class="form-signup" action="https://formspree.io/f/xzzdbvdl?redirect=false" method="POST">
+                        <form class="form-signup" id="contactForm" action="https://formspree.io/f/xzzdbvdl" method="POST">
                             <div class="row input-group-newsletter">
                                 <div class="col">
                                     <textarea class="form-control" id="message" name="message" placeholder="Write your message here..." rows="5" aria-label="Write your message here..." required></textarea>
@@ -149,6 +149,17 @@
                                 </div>
                             </div>
                         </form>
+                        
+                        <!-- Success message -->
+                        <div id="submitSuccessMessage" style="display:none;" class="text-center text-white">
+                            <h5>Your message has been sent successfully!</h5>
+                        </div>
+                        
+                        <!-- Error message -->
+                        <div id="submitErrorMessage" style="display:none;" class="text-center text-danger">
+                            <h5>Oops, something went wrong. Please try again later.</h5>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
