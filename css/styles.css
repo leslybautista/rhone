@@ -11112,18 +11112,18 @@ body {
 }
 
 .about-section {
-  padding-top: 2rem;
+  padding-top: 3rem;
   /*background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);*/
   background: #000;
 
 
 }
 .about-section p {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .projects-section {
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 .projects-section .featured-text {
   padding: 3rem;
