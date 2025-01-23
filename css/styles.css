@@ -8227,7 +8227,7 @@ textarea.form-control-lg {
 
 .text-white {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 .text-body {
@@ -8247,7 +8247,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .text-reset {
